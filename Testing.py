@@ -44,7 +44,13 @@ class TinderBot():
                         matchbtn = self.driver.find_element_by_xpath('//*[@id="modal-manager-canvas"]/div/div/div[1]/div/div[3]/a')
                         matchbtn.click()
                     except:
-                        break    
+                        try:
+                            limitlike = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div[3]/button[2]')
+                            limitlike.click()
+                            break
+                        except:
+                            break    
+    
 
 bot = TinderBot()
 bot.login()
